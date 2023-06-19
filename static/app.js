@@ -46,7 +46,6 @@ class Boggle {
       this.words.add(word);
       this.score += len;
       this.showScore();
-      $score.text(`Score: ${this.score}`);
     }
 
     $guess.val("");
