@@ -27,7 +27,7 @@ class Boggle {
     let $score = $(".score", this.board);
 
     if (this.words.has(word)) {
-      this.showMsg("This word was already added.");
+      this.showMsg("This word has already been entered before.");
       $guess.val("");
       return;
     }
@@ -38,11 +38,11 @@ class Boggle {
     let result = response.data["result"];
 
     if (result === "not-word") {
-      this.showMsg("Not a valid word!");
+      this.showMsg("Invalid entry. Please enter a valid word.");
     } else if (result === "not-on-board") {
-      this.showMsg("Word is not on board!");
+      this.showMsg("Unfortunately, that word is not part of the available choices.");
     } else if (result === "ok") {
-      this.showMsg("Valid word!");
+      this.showMsg("Valid entry!");
       this.words.add(word);
       this.score += len;
       this.showScore();
