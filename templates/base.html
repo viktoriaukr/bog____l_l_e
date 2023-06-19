@@ -4,12 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+      rel="stylesheet"
+    />
     <title>Boggle</title>
   </head>
   <body>
     <section id="boggle">
-      <div class="score">Score: {{ score }}</div>
-      <div>TImer: <span class="timer"></span></div>
+      <div>
+        Score: <span class="score">{{ score }}</span> <br />
+        Timer:
+        <span class="timer"></span>
+      </div>
       <table class="boggle">
         {% for item in board %}
         <tr class="row">
@@ -21,7 +30,7 @@
         {% endfor %}
       </table>
       <form method="post" class="boggle-form">
-        <label for="guess">Enter your guess:</label>
+        <label for="guess">Enter your guess:</label><br />
         <input type="text" name="guess" id="guess" required />
         <button>Submit</button>
       </form>
@@ -35,3 +44,4 @@
     </script>
   </body>
 </html>
+
